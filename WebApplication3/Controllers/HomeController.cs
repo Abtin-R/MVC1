@@ -25,17 +25,11 @@ namespace WebApplication3.Controllers
             return View(v);
         }
 
-        public IActionResult GameDetails(string g)
+        public IActionResult GameDetails(string id)
         {
             VideoGameRepository v = new VideoGameRepository();
-            VideoGame ga = null;
-            foreach(var gam in v.VideoGames)
-            {
-                if(gam.Title == g)
-                {
-                    ga = gam;
-                }
-            }
+            VideoGame ga = v.VideoGames.FirstOrDefault(i => i.Title.ToLower() == id.ToLower());
+
             return View(ga);
         }
 

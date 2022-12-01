@@ -12,6 +12,11 @@
     <h2>@Model.PlayerCount</h2>
     <h2>@Model.AgeRating</h2>
     <h2>@Model.Category</h2>
-    <h2>@Model.Consoles</h2>
+    <ul>
+        @foreach(var m in Model.Consoles)
+        {
+            <li>@m.Name</li>
+        }
+    </ul>
     <h2>@Model.Studio.Name</h2>
 </div>
