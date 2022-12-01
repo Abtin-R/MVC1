@@ -1,0 +1,25 @@
+﻿@model VideoGameRepository;
+
+@{
+    ViewData["Title"] = "Games";
+
+
+    int count = 0;
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <ul>
+        @foreach (var game in Model.VideoGames)
+        {
+            count++;
+            <li><a href="GameDetails/@game.Title/"> @game.Title </a></li>
+        }
+    </ul>
+   
+
+</div>
+
+
+
